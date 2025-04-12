@@ -1,0 +1,13 @@
+@keyframes floating {
+  0%, 100% {
+    transform: translate(0, -30px) scale(1.18);
+  }
+  50% {
+    transform: translate(0, 0) scale(1.08);
+  }
+}
+
+.animate-floating {
+  animation: floating 5s ease-in-out infinite;
+  transition: transform 0.3s ease-in-out;
+}

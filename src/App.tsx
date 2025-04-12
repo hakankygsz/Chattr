@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect } from 'react';
+import { AppWrapper } from '@/components/common/PageMeta';
+import useTheme from '@/hooks/useTheme';
+import appRoutes from '@/routes/app.routes';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ScrollToTop from './components/common/Scroll';
+import Loader from './components/common/Loader';
+import { useSelector } from 'react-redux';
+import { RootState } from './app/store';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const { theme } = useTheme();
+  const isLoading = useSelector((state: RootState) => state.loading.isLoading);
+
+  useEffect(() => {
+    document.documentElement.setAttribute('data-theme', theme);
+  }, [theme]);
+
+  if (isLoading) return <Loader />;
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <AppWrapper>
+      <BrowserRouter>
+        <ScrollToTop />
+        <Routes>
+          {appRoutes}
+        </Routes>
+      </BrowserRouter>
+    </AppWrapper>
+  );
 }
 
-export default App
+export default App;

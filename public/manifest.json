@@ -1,0 +1,10 @@
+{
+    "short_name": "Xristal",
+    "name": "Xristal - Teknoloji ve Yazılım",
+    "description": "Xristal olarak, geleceği şekillendiren teknolojiler ve yenilikçi projeler geliştirme misyonuyla hareket ediyoruz.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#000000"
+  }
+  
