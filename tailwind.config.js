@@ -19,6 +19,5 @@ export default {
     'border-yellow-500', 'text-yellow-500', 'hover:bg-neutral-50',
     'border-blue-500', 'text-blue-500', 'hover:bg-neutral-50',
     'border-red-500', 'text-red-500', 'hover:bg-neutral-50',
-    // Eğer daha fazla renk varsa, bunları da ekle
   ],
 }

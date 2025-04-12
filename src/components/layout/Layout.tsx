@@ -4,7 +4,7 @@ import Header from './Header/Header'
 
 const Layout = () => {
   return (
-    <div className='bg-white dark:bg-[#080816] text-black dark:text-white min-h-screen w-full'>
+    <div className='bg-white dark:bg-black text-black dark:text-white min-h-screen w-full'>
       <Header />
       <Outlet />
       <Footer />

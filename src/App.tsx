@@ -1,20 +1,14 @@
-import { useEffect } from 'react';
 import { AppWrapper } from '@/components/common/PageMeta';
-import useTheme from '@/hooks/useTheme';
 import appRoutes from '@/routes/app.routes';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import ScrollToTop from './components/common/Scroll';
-import Loader from './components/common/Loader';
+import { Suspense } from 'react';
 import { useSelector } from 'react-redux';
+import { BrowserRouter, Routes } from 'react-router-dom';
 import { RootState } from './app/store';
+import Loader from './components/common/Loader';
+import ScrollToTop from './components/common/Scroll';
 
 const App = () => {
-  const { theme } = useTheme();
   const isLoading = useSelector((state: RootState) => state.loading.isLoading);
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
 
   if (isLoading) return <Loader />;
 
@@ -22,12 +16,14 @@ const App = () => {
     <AppWrapper>
       <BrowserRouter>
         <ScrollToTop />
-        <Routes>
-          {appRoutes}
-        </Routes>
+        <Suspense fallback={<Loader />}>
+          <Routes>
+            {appRoutes}
+          </Routes>
+        </Suspense>
       </BrowserRouter>
     </AppWrapper>
   );
-}
+};
 
 export default App;

@@ -1,6 +1,6 @@
-import { createRoot } from 'react-dom/client'
-import "@/assets/styles/globals.scss"
-import App from '@/App'
+import App from '@/App';
+import "@/assets/styles/globals.scss";
+import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
 

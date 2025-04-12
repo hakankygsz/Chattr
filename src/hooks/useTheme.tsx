@@ -14,6 +14,8 @@ const useTheme = () => {
     const root = document.documentElement;
     const body = document.body;
 
+    root.setAttribute('data-theme', theme);
+
     root.classList.toggle("dark", theme === "dark");
     body.style.transition = "background-color 0.3s ease, color 0.3s ease";
 

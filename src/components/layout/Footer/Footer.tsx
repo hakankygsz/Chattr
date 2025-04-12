@@ -21,7 +21,7 @@ const footerLinks = [
 ];
 
 const Footer = () => (
-  <footer className="p-8 bg-white dark:bg-[#080816]">
+  <footer className="p-8">
     <div className="mx-auto max-w-screen-2xl">
       <div className="md:flex md:justify-between">
         <div className="mb-6 md:mb-0 flex items-center">

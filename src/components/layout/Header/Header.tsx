@@ -19,7 +19,7 @@ const Header = () => {
   const toggleMobileMenuOpenned = () => setMobileMenuOpenned(prev => !prev);
 
   return (
-    <header className='overflow-hidden sticky top-0 left-0 z-40 flex justify-between items-center h-24 px-8 lg:px-48 bg-white dark:bg-[#080816]'>
+    <header className='overflow-hidden sticky top-0 left-0 z-40 flex justify-between items-center h-24 px-8 lg:px-48 backdrop-blur-3xl'>
       <div className='flex items-center justify-between'>
         <Link to="/" className="text-6xl text-blue-600 cursor-pointer select-none">
           <img src={Logo} alt="Logo" className="h-14 w-14 object-contain" />
